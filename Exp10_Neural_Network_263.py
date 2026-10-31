@@ -18,3 +18,8 @@ model.fit(X_train, y_train, epochs=10, verbose=0)
 
 loss, acc = model.evaluate(X_test, y_test, verbose=0)    
 print("Test accuracy:", round(acc, 3))   
+
+new_image = [X_test[0]]                                 
+prediction = model.predict(new_image, verbose=0)       
+digit = np.argmax(prediction)                          
+print("Predicted digit:", digit)  
